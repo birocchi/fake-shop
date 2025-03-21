@@ -21,7 +21,9 @@ jobs:
           context: ./src
           push: true
           file: ./src/Dockerfile
-          tags: birocchi/fake-shop-desafio:v${{ github.run_number }}
+          tags: |
+            birocchi/fake-shop-desafio:v${{ github.run_number }}
+            birocchi/fake-shop-desafio
   CD:
     needs: [CI]
     runs-on: ubuntu-latest
